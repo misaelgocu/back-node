@@ -1,5 +1,5 @@
 const express = require('express');
-const { faker }= require('@faker-js/faker');
+const routerApi = require('./routes')
 
 const app = express();
 const port = 3000;
@@ -26,19 +26,8 @@ app.get('/nuevo-endpoint', (req, res) => {
   ]);
 });
 
-app.get('/products', (req, res) =>{
-  const products = [];
-  const { size } = req.query;
-  const limit = size || 10;
-  for(let i =0; i < limit; i++){
-    products.push({
-      name: faker.commerce.productName(),
-      price: parseInt(faker.commerce.price(), 10),
-      image: faker.image.avatar(),
-    });
-  }
-  res.json(products);
-});
+routerApi(app);
+
 
 app.listen(port, () =>{
   console.log('Mi port: ' + port);
