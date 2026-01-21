@@ -2,3 +2,5 @@ pnpm i nodemon eslint eslint-config-prettier eslint-plugin-prettier prettier -D
 
 pnpm i express
 
+pnpm i @faker-js/faker
+
