@@ -10,22 +10,6 @@ app.get('/', (req, res) =>{
   res.send('Hola mi server en express');
 });
 
-app.get('/nuevo-endpoint', (req, res) => {
-  res.json([
-    {
-    id: 1,
-    nombre: 'Producto de ejemplo',
-    precio: 25.99,
-    disponible: true
-  },
-  {
-    id: 2,
-    nombre: 'Producto de ejemplo 2',
-    precio: 25.99,
-    disponible: true
-  }
-  ]);
-});
 
 
 
