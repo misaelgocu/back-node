@@ -2,7 +2,7 @@ const Joi = require('joi');
 
 // Definición de tipos de datos individuales (Atómicos)
 const id = Joi.string().uuid();
-const name = Joi.string().min(3).max(15); // Nota: quité alphanum por si el producto tiene espacios
+const name = Joi.string().min(3).max(15);
 const price = Joi.number().integer().min(10);
 const image = Joi.string().uri();
 
