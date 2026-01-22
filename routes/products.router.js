@@ -25,7 +25,7 @@ router.get('/:id', async (req, res, next) => {
 router.post('/', async (req, res) => {
   const body = req.body;
   const newProduct = await service.create(body);
-  res.status(201).json(newProduct);
+  next(error);
 });
 
 // PATCH: Actualización parcial - Ahora sí llama al servicio
@@ -36,7 +36,7 @@ router.patch('/:id', async (req, res) => {
     const product = await service.update(id, body);
     res.json(product);
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    next(error);
   }
 });
 
@@ -47,7 +47,7 @@ router.delete('/:id', async (req, res) => {
     const answer = await service.delete(id);
     res.json(answer);
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    next(error);
   }
 });
 
