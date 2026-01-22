@@ -6,7 +6,10 @@ pnpm i @faker-js/faker
 
 pnpm i @hapi/boom
 
-npm install joi
+pnpm install joi
+
+pnpm i cors
+
 
 A continuación te compartiré una lista de los middlewares más populares en Express.
 
